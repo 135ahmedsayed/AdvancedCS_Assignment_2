@@ -32,6 +32,22 @@
                 Console.WriteLine(count);
             }
             #endregion
+
+            #region Q2
+            Console.WriteLine("\n");
+            Console.Write("Enter Size :");
+            bool palindrome = false; 
+            int N = int.Parse(Console.ReadLine()!);
+            List<int> arr = new(N);
+            for (int i = 0;i < arr.Capacity; i++)
+                arr.Add(int.Parse(Console.ReadLine()!));
+            for (int i = 0; i < arr.Count; i++)
+                if (arr[i] == arr[arr.Count - i - 1])
+                    palindrome = true;
+                else
+                    palindrome = false;
+            Console.WriteLine($"palindrome : {palindrome}");
+            #endregion
             Console.ReadKey();
         }
     }
