@@ -48,6 +48,24 @@
                     palindrome = false;
             Console.WriteLine($"palindrome : {palindrome}");
             #endregion
+
+            #region Q3
+            Console.WriteLine("\n");
+            Queue<string> str = new();
+            Stack<string> reverse = new();
+            str.Enqueue("Ahmed");
+            str.Enqueue("Sayed");
+            str.Enqueue("Mohamed");
+            str.Enqueue("Hassan");
+            foreach (var item in str)
+            {
+                reverse.Push(item);
+            }
+            foreach (var item in reverse)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
             Console.ReadKey();
         }
     }
