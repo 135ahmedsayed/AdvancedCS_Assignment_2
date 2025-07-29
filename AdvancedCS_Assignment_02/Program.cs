@@ -102,6 +102,13 @@
             else
                 Console.WriteLine("The expression is not balanced.");
             #endregion
+
+            #region Q5
+            int[] ints = { 1, 2, 3, 42, 323, 2, 1, 3, 3, 3, 2, 2, 1, 1 };
+            HashSet<int> nums = new(ints);
+            foreach (int i in nums)
+                Console.Write($"{i}  ");
+            #endregion
             Console.ReadKey();
         }
     }
