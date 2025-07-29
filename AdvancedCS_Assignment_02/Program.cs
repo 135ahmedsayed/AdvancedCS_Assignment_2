@@ -66,6 +66,42 @@
                 Console.WriteLine(item);
             }
             #endregion
+
+            #region Q4
+            Console.WriteLine("\n");
+            Console.Write("Enter expression: ");
+            string input = Console.ReadLine()!;
+            Stack<char> stack = new Stack<char>();
+            bool isBalanced = true;
+            foreach (char ch in input)
+            {
+                if (ch == '(' || ch == '{' || ch == '[')
+                {
+                    stack.Push(ch);
+                }
+                else if (ch == ')' || ch == '}' || ch == ']')
+                {
+                    if (stack.Count == 0)
+                        isBalanced= false;
+
+                    char top = stack.Pop();
+
+                    if (!IsMatching(top, ch))
+                        isBalanced = false;
+                }
+                
+            }
+            static bool IsMatching(char open, char close)
+            {
+                return (open == '(' && close == ')') ||
+                       (open == '{' && close == '}') ||
+                       (open == '[' && close == ']');
+            }
+            if (isBalanced && stack.Count == 0)
+                Console.WriteLine("The expression is balanced.");
+            else
+                Console.WriteLine("The expression is not balanced.");
+            #endregion
             Console.ReadKey();
         }
     }
