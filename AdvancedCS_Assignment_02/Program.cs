@@ -139,18 +139,29 @@ namespace AdvancedCS_Assignment_02
 
             #region Q8
             Console.WriteLine("\n");
-            int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
-            Stack<int> S = new Stack<int>(numbers);
-            int ii = 1;
-            foreach (int i in numbers)
+            int[] numbers=new int[5];
+            for(int i = 0; i < numbers.Length; i++)
             {
-                if (i == 60)
+                Console.Write($"Enter Number {i + 1}: ");
+                numbers[i] = int.Parse(Console.ReadLine()!);
+            }
+            Console.WriteLine("Enter th Target : ");
+            int target = int.Parse(Console.ReadLine()!);
+            Stack<int> S = new Stack<int>();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                S.Push(numbers[i]);
+                if (numbers[i] == target)
                 {
-                    Console.WriteLine($"Target was found successfully and the Count = {ii}");
+                    Console.WriteLine($"Target was found successfully and the count = {S.Count}");
+                    break;
                 }
-                ii++;
+                if (S.Count == numbers.Length)
+                    Console.WriteLine("Target was not found");
             }
             #endregion
+
+            
             Console.ReadKey();
         }
     }
