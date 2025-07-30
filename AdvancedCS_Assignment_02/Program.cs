@@ -1,4 +1,6 @@
-﻿namespace AdvancedCS_Assignment_02
+﻿using System.Collections;
+
+namespace AdvancedCS_Assignment_02
 {
     internal class Program
     {
@@ -108,6 +110,19 @@
             HashSet<int> nums = new(ints);
             foreach (int i in nums)
                 Console.Write($"{i}  ");
+            #endregion
+
+            #region Q6
+            Console.WriteLine("\n");
+            Console.Write("Numbers are Even : ");
+            ArrayList arrayList = new ArrayList();
+            int[] Int = {1,3,4,2,4,23,90,100,7,9 };
+            arrayList.AddRange(Int);
+            foreach (int i in Int)
+                if (i % 2 != 0)
+                    arrayList.Remove(i);
+                else
+                    Console.Write($"{i}  ");
             #endregion
             Console.ReadKey();
         }
