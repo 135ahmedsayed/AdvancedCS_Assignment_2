@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AdvancedCS_Assignment_02
 {
@@ -134,6 +135,21 @@ namespace AdvancedCS_Assignment_02
             queue.Enqueue(5.28);
             foreach (object i in queue)
                 Console.WriteLine(i);
+            #endregion
+
+            #region Q8
+            Console.WriteLine("\n");
+            int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+            Stack<int> S = new Stack<int>(numbers);
+            int ii = 1;
+            foreach (int i in numbers)
+            {
+                if (i == 60)
+                {
+                    Console.WriteLine($"Target was found successfully and the Count = {ii}");
+                }
+                ii++;
+            }
             #endregion
             Console.ReadKey();
         }
