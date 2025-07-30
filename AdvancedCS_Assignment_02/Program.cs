@@ -161,7 +161,36 @@ namespace AdvancedCS_Assignment_02
             }
             #endregion
 
-            
+            #region Q9
+            Console.Write("Enter Size List1 : ");
+            int size1 = int.Parse(Console.ReadLine()!);
+            Console.Write("Enter Size List2 : ");
+            int size2 = int.Parse(Console.ReadLine()!);
+            List<int> list1 = new List<int>(size1);
+            List<int> list2 = new List<int>(size2);
+            Console.WriteLine("Enter Numbers list1 : ");
+            for (int i = 0; i < list1.Capacity; i++)
+            {
+                list1.Add(int.Parse(Console.ReadLine()!));
+            }
+            Console.WriteLine("Enter Numbers list2 : ");
+            for (int i = 0; i < list2.Capacity; i++)
+            {
+                list2.Add(int.Parse(Console.ReadLine()!));
+            }
+           
+            foreach (int i in list1)
+            {
+                foreach (int j in list2)
+                {
+                    if (i == j)
+                    {
+                        Console.Write($"{i}  ");
+                        break;
+                    }
+                }
+            }
+            #endregion
             Console.ReadKey();
         }
     }
