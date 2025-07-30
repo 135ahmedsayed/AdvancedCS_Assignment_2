@@ -191,6 +191,43 @@ namespace AdvancedCS_Assignment_02
                 }
             }
             #endregion
+
+            #region 10
+            Console.WriteLine("\n");
+            ArrayList array = new ArrayList() { 1, 2, 3, 7, 5 };
+            int target1 = 12;
+            FindSublistTargetSum(array, target);
+            static void FindSublistTargetSum(ArrayList list, int target)
+            {
+                int start = 0;
+                int currentSum = 0;
+
+                for (int end = 0; end < list.Count; end++)
+                {
+                    currentSum += (int)list[end]!;
+
+                    while (currentSum > target && start < end)
+                    {
+                        currentSum -= (int)list[start]!;
+                        start++;
+                    }
+
+                    if (currentSum == target)
+                    {
+                        Console.Write("Sublist found: [");
+                        for (int i = start; i <= end; i++)
+                        {
+                            Console.Write(list[i]);
+                            if (i < end) Console.Write(", ");
+                        }
+                        Console.WriteLine("]");
+                        return;
+                    }
+                }
+                Console.WriteLine("No sublist with the given sum was found.");
+            }
+
+            #endregion
             Console.ReadKey();
         }
     }
