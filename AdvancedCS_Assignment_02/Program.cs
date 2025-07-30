@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AdvancedCS_Assignment_02
@@ -40,7 +41,7 @@ namespace AdvancedCS_Assignment_02
             #region Q2
             Console.WriteLine("\n");
             Console.Write("Enter Size :");
-            bool palindrome = false; 
+            bool palindrome = false;
             int N = int.Parse(Console.ReadLine()!);
             List<int> arr = new(N);
             for (int i = 0;i < arr.Capacity; i++)
@@ -93,7 +94,7 @@ namespace AdvancedCS_Assignment_02
                     if (!IsMatching(top, ch))
                         isBalanced = false;
                 }
-                
+
             }
             static bool IsMatching(char open, char close)
             {
@@ -178,7 +179,7 @@ namespace AdvancedCS_Assignment_02
             {
                 list2.Add(int.Parse(Console.ReadLine()!));
             }
-           
+
             foreach (int i in list1)
             {
                 foreach (int j in list2)
@@ -227,6 +228,35 @@ namespace AdvancedCS_Assignment_02
                 Console.WriteLine("No sublist with the given sum was found.");
             }
 
+            #endregion
+
+            #region Q11
+            int[] ar = new int[] { 1, 2, 3, 4, 5 };
+            Queue<int> q1 = new Queue<int>(ar);
+            Stack<int> S1 = new Stack<int>();
+            int k = 3;
+            if (k > q1.Count || k < 0)
+            {
+                Console.WriteLine("Invalid K");
+                return;
+            }
+            for (int i=0; i < k; i++)
+            {
+                S1.Push(q1.Dequeue());
+            }
+            while(S1.Count > 0)
+            {
+                q1.Enqueue(S1.Pop());
+            }
+            int remaining = q1.Count - k;
+            for (int i = 0; i < remaining; i++)
+            {
+                q1.Enqueue(q1.Dequeue());
+            }
+            foreach(int item in q1)
+                Console.Write($"{item}  ");
+            
+            
             #endregion
             Console.ReadKey();
         }
