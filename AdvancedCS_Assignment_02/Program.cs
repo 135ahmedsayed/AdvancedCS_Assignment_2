@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace AdvancedCS_Assignment_02
 {
@@ -123,6 +124,16 @@ namespace AdvancedCS_Assignment_02
                     arrayList.Remove(i);
                 else
                     Console.Write($"{i}  ");
+            #endregion
+
+            #region Q7
+            Console.WriteLine("\n");
+            Queue<object> queue = new Queue<object>();
+            queue.Enqueue(1);
+            queue.Enqueue("Apple");
+            queue.Enqueue(5.28);
+            foreach (object i in queue)
+                Console.WriteLine(i);
             #endregion
             Console.ReadKey();
         }
